@@ -1,12 +1,4 @@
-steps:
-  - name: Debug secrets
-    run: |
-      echo "CSRF length: ${#LEETCODE_CSRF_TOKEN}"
-      echo "Session length: ${#LEETCODE_SESSION}"
-    env:
-      LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
-      LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}   
-      name: Sync Leetcode
+name: Sync Leetcode
 
 on:
   workflow_dispatch:
