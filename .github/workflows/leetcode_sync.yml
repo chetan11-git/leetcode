@@ -1,14 +1,17 @@
 name: LeetCode Sync
 
 on:
-  workflow_dispatch:      # Allows you to trigger the sync manually
+  workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'   # Automatically runs every day at 8:00 AM UTC
+    - cron: '0 8 * * *'
+
+# Add this section to grant write permissions to the GITHUB_TOKEN
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Sync Submissions
         uses: joshcai/leetcode-sync@v1.7
